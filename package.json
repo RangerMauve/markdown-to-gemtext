@@ -1,6 +1,6 @@
 {
   "name": "markdown-to-gemtext",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JavaScript Node.js library for converting Markdown documents to Gemini Gemtext",
   "main": "index.js",
   "type": "module",
