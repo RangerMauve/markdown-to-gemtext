@@ -24,6 +24,14 @@ And yeah, stuff like *italics*, **bold**, ~strikethrough~, `backticks` should ju
 * *even*
 * numbered lists
 
+* all
+* nested
+* lists
+* are
+* flattened
+
+Cool!
+
 => https://example.com/4 lists of
 => https://example.com/5 lists
 => https://example.com/6 are flattened

@@ -28,6 +28,14 @@ And yeah, stuff like *italics*, **bold**, ~strikethrough~, `backticks` should ju
 2. *even*
 3. numbered lists
 
+- all
+- nested
+    - lists
+    - are
+    - flattened
+
+Cool!
+
 - [lists of](https://example.com/4)
 - [lists](https://example.com/5)
 - [are flattened](https://example.com/6)

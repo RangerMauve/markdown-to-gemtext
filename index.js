@@ -18,6 +18,7 @@ export function fromMarkdown (markdown) {
 export function * tokensToGemtext (tokens) {
   const endLinks = []
   for (const token of tokens) {
+    // console.log(token)
     const { type, tokens } = token
     if (type === 'space') {
       yield NEWLINE
@@ -76,6 +77,10 @@ export function * tokensToGemtext (tokens) {
         const { href, text } = token
         endLinks.push({ href, text, index })
         full += `${text}[${index}]`
+      } else if (token.type === 'list') {
+        full += token.items
+          .map((item) => `* ${flattenTokens(item.tokens)}`)
+          .join('\n')
       } else {
         throw new Error(`Unsupported markdown type ${token.type}:\n${JSON.stringify(tokens)}`)
       }
@@ -87,6 +92,7 @@ export function * tokensToGemtext (tokens) {
 function areAllLinks (tokens) {
   for (const item of tokens) {
     if (item.tokens.length !== 1) return false
+    // console.log('>> ', item.tokens[0])
     if (item.tokens[0].tokens?.length !== 1) return false
     if (item.tokens[0]?.tokens[0]?.type !== 'link') return false
   }

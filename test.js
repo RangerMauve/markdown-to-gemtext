@@ -8,5 +8,7 @@ test('parse and render basic example', async (t) => {
   const expectedGemtext = await readFile('./fixtures/basic.gmi', 'utf8')
   const gemtext = fromMarkdown(markdown)
 
+  // console.log(gemtext)
+
   assert.equal(gemtext, expectedGemtext, 'Rendered expected gemtext')
 })

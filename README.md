@@ -8,6 +8,7 @@ JavaScript Node.js library for converting Markdown documents to Gemini Gemtext
 - Images get turned into links
 - Bold/Italics/Strikethrough is just text
 - Code block language gets lost
+- Nested lists are flattened
 
 ## Usage
 
