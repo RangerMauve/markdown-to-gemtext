@@ -57,6 +57,8 @@ export function * tokensToGemtext (tokens) {
           yield `* ${flattenTokens(item.tokens)}\n`
         }
       }
+    } else {
+      console.warn(`Unsupported markdown type ${type}`, token)
     }
   }
 
@@ -82,7 +84,7 @@ export function * tokensToGemtext (tokens) {
           .map((item) => `* ${flattenTokens(item.tokens)}`)
           .join('\n')
       } else {
-        throw new Error(`Unsupported markdown type ${token.type}:\n${JSON.stringify(tokens)}`)
+        console.warn(`Unsupported markdown type ${token.type}`, tokens)
       }
     }
     return full
